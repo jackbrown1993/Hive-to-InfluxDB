@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import settings
+import settings as settings
 import requests
 import json
 import time

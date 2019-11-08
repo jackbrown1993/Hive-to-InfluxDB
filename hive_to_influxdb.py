@@ -40,7 +40,7 @@ while True:
             target_temp = float(data[i]["state"]["target"])
             status = data[i]["props"]["working"]
             
-            if status == "false":
+            if status == "True":
                 status_boolean = 0
             else:
                 status_boolean = 1

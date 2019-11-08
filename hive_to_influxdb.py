@@ -38,6 +38,12 @@ while True:
         if product_type == 'heating':
             temp = float(data[i]["props"]["temperature"])
             target_temp = float(data[i]["state"]["target"])
+            status = data[i]["props"]["working"]
+            
+            if status == "false":
+                status_boolean = 0
+            else:
+                status_boolean = 1
 
             # Convert results into JSON ready for InfluxDB
             json_body = [
@@ -49,7 +55,9 @@ while True:
                     "time": current_time,
                     "fields": {
                         "temp": temp,
-                        "target_temp": target_temp
+                        "target_temp": target_temp,
+                        "status": status,
+                        "status_boolean": status_boolean
                     }
                 }
             ]

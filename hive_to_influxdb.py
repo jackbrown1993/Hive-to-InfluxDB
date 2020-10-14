@@ -14,7 +14,7 @@ client.switch_database(settings.influx_db_name)
 # Logon to Hive
 payload = {'username':settings.british_gas_username, 'password':settings.british_gas_password, 'devices':True, 'products':True}
 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-url = 'https://beekeeper.hivehome.com:443/1.0/global/login'
+url = 'https://beekeeper.hivehome.com:443/1.0/cognito/login'
 
 while True:
     current_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')
